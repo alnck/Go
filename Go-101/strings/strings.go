@@ -7,9 +7,15 @@ import (
 
 func main() {
 	str := "Eren Alincak"
+	spacesize := 0
 
-	str1 := str[:4]
-	str2 := str[len(str)-7:]
+	for i := 0; str[i] <= '\r'; i++ {
+		println("size:", i)
+		spacesize = i
+	}
+
+	str1 := str[:spacesize]
+	str2 := str[len(str)-spacesize:]
 	str3 := fmt.Sprintf("isim: %s, Soy isim: %s", str1, str2)
 
 	if strings.EqualFold(str1, "ErEn") {
